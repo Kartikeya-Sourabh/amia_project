@@ -42,7 +42,7 @@ Either way the output passes through the same verifier.
 - **Dates:** "the 25th", "next Wednesday", "day after tomorrow", "Q4"/"mid-December" (flagged vague), dd/mm ambiguity flagged.
 
 ## Measured accuracy (run `python3 evaluate.py`)
-Labelled cases: 5 transcripts, 76 expected items. Before this refinement the same cases scored **84% precision / 52% recall**.
+Labelled cases: 5 transcripts, 76 expected items. Before this refinement the same cases scored **84% precision / 72% recall**.
 A transcript written *after* the patterns (held-out, never tuned) scored **16 of 22 items found** on first pass; its gaps were then fixed
 as general rules. Treat the current 100% on these files as a regression baseline, **not** a promise for unseen meetings - expect
 roughly the held-out level (about 70-90%) on new phrasing, with doubtful items flagged for review. Add your own transcript + gold file
