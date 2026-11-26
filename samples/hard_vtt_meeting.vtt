@@ -1,0 +1,61 @@
+WEBVTT
+
+1
+00:00:01.000 --> 00:00:05.000
+<v Hari>Alright team, quick sync on the billing revamp.
+
+2
+00:00:06.000 --> 00:00:10.000
+<v Hari>The last release went out on 3 November and the retro is done.
+
+3
+00:00:11.000 --> 00:00:15.000
+<v Nisha>The invoicing module is blocked until the tax API keys arrive.
+
+4
+00:00:16.000 --> 00:00:20.000
+<v Hari>Nisha, can you chase the tax team today?
+
+5
+00:00:21.000 --> 00:00:25.000
+<v Nisha>On it.
+
+6
+00:00:26.000 --> 00:00:30.000
+<v Omar>Quick question, is the new pricing page in scope for this phase?
+
+7
+00:00:31.000 --> 00:00:35.000
+<v Hari>Yes, it's in scope.
+
+8
+00:00:36.000 --> 00:00:40.000
+<v Omar>The beta launch is targeted for 15 December.
+
+9
+00:00:41.000 --> 00:00:45.000
+<v Hari>Two more engineers would help us hit that.
+
+10
+00:00:46.000 --> 00:00:50.000
+<v Omar>I'll draft the rollout plan by next Wednesday.
+
+11
+00:00:51.000 --> 00:00:55.000
+<v Hari>Let's go with Stripe for the payment provider.
+
+12
+00:00:56.000 --> 00:00:60.000
+<v Nisha>If the audit slips we could lose the December slot.
+
+13
+00:00:61.000 --> 00:00:65.000
+<v Hari>Nobody has confirmed who signs off on the pricing change.
+
+14
+00:00:66.000 --> 00:00:70.000
+<v Omar>Do we need a security review before the beta?
+
+15
+00:00:71.000 --> 00:00:75.000
+<v Hari>Okay, that's all for today.

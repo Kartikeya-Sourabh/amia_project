@@ -1,0 +1,115 @@
+{
+ "transcript": "hard_asr_meeting.txt",
+ "meeting_date": "2026-11-17",
+ "expected": [
+  {
+   "type": "context",
+   "line": 2
+  },
+  {
+   "type": "action",
+   "line": 3,
+   "owner": "Arjun",
+   "due": "2026-11-20",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 5,
+   "owner": "Arjun",
+   "due": null,
+   "status": "needs_review"
+  },
+  {
+   "type": "action",
+   "line": 6,
+   "owner": "Divya",
+   "due": "2026-11-19",
+   "status": "needs_review"
+  },
+  {
+   "type": "risk",
+   "line": 8
+  },
+  {
+   "type": "risk",
+   "line": 9
+  },
+  {
+   "type": "question",
+   "line": 10,
+   "status": "verified"
+  },
+  {
+   "type": "milestone",
+   "line": 12,
+   "due": "2026-12-03",
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 14,
+   "status": "verified"
+  },
+  {
+   "type": "milestone",
+   "line": 14,
+   "due": "2026-12-03",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 17,
+   "owner": "Arjun",
+   "due": "2026-11-18",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 18,
+   "owner": "Meena",
+   "due": "2026-11-25",
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 20,
+   "status": "verified"
+  },
+  {
+   "type": "milestone",
+   "line": 20,
+   "due": "2026-12-03",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 23,
+   "owner": "Divya",
+   "due": null,
+   "status": "needs_review"
+  },
+  {
+   "type": "decision",
+   "line": 24,
+   "status": "verified"
+  }
+ ],
+ "must_not_extract": [
+  {
+   "line": 13
+  },
+  {
+   "line": 15
+  },
+  {
+   "line": 16
+  },
+  {
+   "line": 22
+  },
+  {
+   "line": 25
+  }
+ ]
+}

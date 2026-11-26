@@ -1,0 +1,53 @@
+Priya Nair   0:05
+Good morning everyone. Let's start with the data platform migration.
+
+Sam Wilson   0:20
+The cutover is scheduled for 30 November. We completed the schema validation last week.
+
+Priya Nair   0:45
+Great. Sam and Lena will prepare the cutover runbook by 24 November.
+
+Lena Ortiz   1:02
+Yes, we'll get that done. Although I'm not sure the staging cluster will be ready in time.
+
+Sam Wilson   1:20
+That's a real risk. If the vendor misses the delivery, we slip the cutover.
+
+Priya Nair   1:40
+Who is responsible for the vendor escalation?
+
+Sam Wilson   1:48
+I don't know. Let's come back to that.
+
+Priya Nair   2:05
+Okay. Going forward we will use blue-green deployments for all migrations.
+
+Lena Ortiz   2:20
+Should we also freeze schema changes after 20 November?
+
+Priya Nair   2:28
+Yes, agreed. Schema freeze starts 20 November.
+
+Sam Wilson   2:50
+Actually, let's move the cutover to 2 December, the vendor needs more time.
+
+Priya Nair   3:05
+Fine by me. Lena, please share the updated timeline with the stakeholders by Thursday.
+
+Lena Ortiz   3:15
+Will do.
+
+Sam Wilson   3:30
+I'll check with the vendor about the delivery date and report back.
+
+Priya Nair   3:45
+Does anyone know whether finance approved the extra storage budget?
+
+Sam Wilson   3:55
+Not yet, I'm waiting to hear back.
+
+Priya Nair   4:10
+The beta release process needs a review. We could do that next quarter.
+
+Priya Nair   4:30
+Thanks all, that's it.

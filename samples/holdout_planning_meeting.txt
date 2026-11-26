@@ -1,0 +1,31 @@
+[00:00] Neha: Morning all. Quick agenda: payments squad update, scope with the client, and the December plan.
+[00:30] Neha: Currently we have three engineers on the payments squad.
+[00:50] Kiran: We shipped the v2 release on 10 October and customers loved it.
+[01:10] Neha: Great. Karthik owns the deployment script and will have it ready by 4 December.
+[01:30] Karthik: Yes, that's right.
+[01:40] Neha: Rahul, could you review the pull request by tomorrow?
+[01:48] Rahul: Sure thing.
+[02:05] Neha: Can someone update the wiki with the new architecture?
+[02:12] Kiran: I'll do it by Friday.
+[02:30] Neha: Okay so final answer: we're sticking with the monolith for now.
+[02:50] Neha: We're also dropping the legacy export feature.
+[03:10] Rahul: Why don't we move standups to 10 am?
+[03:14] Kiran: Works for me.
+[03:30] Rahul: The load test showed the API can't handle more than 500 requests per second.
+[03:50] Kiran: Honestly I'm concerned about the timeline.
+[04:10] Neha: Has anyone talked to the client about the revised scope?
+[04:18] Karthik: Not that I know of.
+[04:40] Neha: Beta goes out to customers on 8 December.
+[05:00] Neha: We agreed to do the migration on 5 December.
+[05:20] Kiran: Correction, the migration is on 12 December, not the 5th.
+[05:40] Neha: Priya will send the contract soon.
+[05:55] Priya: Yes.
+[06:10] Kiran: Rahul to finalize pricing by 03/04.
+[06:25] Neha: Legal approved the draft last week.
+[06:40] Rahul: He'll sort out the invoices.
+[06:55] Karthik: I'll try to finish the report by Monday.
+[07:10] Neha: It's unclear who pays for the extra licences.
+[07:30] Neha: We won't make the 20 November date unless the API is done.
+[07:45] Neha: The release notes are due Friday.
+[08:00] Neha: Can everyone see my screen?
+[08:10] Neha: Thanks all.

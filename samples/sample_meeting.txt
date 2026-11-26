@@ -1,0 +1,22 @@
+[00:00] Anita: Okay, let's get started. This is the weekly sync for Project Falcon.
+[00:20] Anita: For context, we completed the database migration last week and the staging environment is stable.
+[00:45] Ravi: The API integration with the payments vendor is about 70 percent done.
+[01:10] Ravi: I'll finish the API integration by 18 November.
+[01:30] Anita: Great. Priya, can you send the updated test plan to QA?
+[01:40] Priya: Sure.
+[02:05] Priya: I'm worried the vendor sandbox might go down again, that could delay testing.
+[02:30] Sam: How about we move the release date to 2 December?
+[02:40] Anita: Agreed, let's do that.
+[03:00] Anita: We decided to use PostgreSQL 15 for the reporting service.
+[03:20] Sam: Who will approve the security review?
+[03:28] Anita: Not sure, we need to find out.
+[03:50] Priya: Do we have budget for the extra load test?
+[04:00] Sam: Yes, finance confirmed last week.
+[04:15] Sam: Maybe we should rewrite the notification service at some point.
+[04:30] Anita: We need to finalize the rollout checklist.
+[04:50] Priya: I will update the runbook by Friday.
+[05:10] Anita: Code freeze is on 25 November.
+[05:30] Ravi: There is a dependency on the vendor's API keys, and we are blocked until they arrive.
+[05:50] Anita: Sam to schedule the security review kickoff next week.
+[06:10] Anita: We haven't decided who owns the monitoring dashboards.
+[06:30] Anita: Thanks everyone.

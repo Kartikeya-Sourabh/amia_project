@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AMIA - Meeting Intelligence</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1c2230;--mute:#667085;--line:#e3e6ec;--ok:#157f4b;--okbg:#e4f5ec;--warn:#9a5b00;--warnbg:#fff3dc;--bad:#b42318;--badbg:#fde8e6;--hum:#3538cd;--humbg:#e8e9fd;--acc:#2b59ff}
+@media(prefers-color-scheme:dark){:root{--bg:#12151c;--card:#1a1e28;--ink:#e8ebf2;--mute:#9aa3b5;--line:#2b3140;--okbg:#12301f;--ok:#58d38f;--warn:#f0b24d;--warnbg:#33270f;--bad:#ff8a80;--badbg:#3a1815;--hum:#a3a6ff;--humbg:#25274a;--acc:#7b9bff}}
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:14px 24px;border-bottom:1px solid var(--line);background:var(--card);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+header h1{font-size:17px;margin:0}header small{color:var(--mute)}.pill{margin-left:auto;padding:3px 10px;border-radius:99px;font-size:12px;background:var(--warnbg);color:var(--warn)}.pill.on{background:var(--okbg);color:var(--ok)}
+main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:18px;padding:18px 24px;max-width:1500px;margin:auto}
+@media(max-width:1000px){main{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:14px}
+label{display:block;font-size:12px;color:var(--mute);margin-bottom:3px}
+input,select,textarea{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:170px;font:12.5px/1.45 ui-monospace,Menlo,Consolas,monospace;resize:vertical}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:10px}
+button{padding:7px 13px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);cursor:pointer;font:inherit}
+button.primary{background:var(--acc);border-color:var(--acc);color:#fff}button:hover{filter:brightness(.96)}button:disabled{opacity:.5}
+.bar{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.tabs button.on{background:var(--ink);color:var(--bg)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}.chip{padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card)}.chip b{font-size:18px;display:block}
+.item{border:1px solid var(--line);border-left:4px solid var(--line);border-radius:9px;padding:11px 13px;margin-bottom:10px;background:var(--card)}
+.item.verified{border-left-color:var(--ok)}.item.needs_review{border-left-color:var(--warn)}.item.unsupported{border-left-color:var(--bad)}.item.rejected{opacity:.55}
+.top{display:flex;gap:8px;align-items:center;margin-bottom:5px;flex-wrap:wrap}
+.badge{font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;background:var(--line);color:var(--mute)}
+.b-verified{background:var(--okbg);color:var(--ok)}.b-needs_review{background:var(--warnbg);color:var(--warn)}.b-unsupported,.b-rejected{background:var(--badbg);color:var(--bad)}.b-human{background:var(--humbg);color:var(--hum)}
+.summary{font-weight:600}.meta{color:var(--mute);margin:3px 0}.meta b{color:var(--ink)}.unset{color:var(--bad);font-weight:600}
+.ev{display:block;width:100%;text-align:left;margin-top:5px;padding:6px 9px;background:var(--bg);border:1px dashed var(--line);font-size:12.5px}
+.ev span{color:var(--acc);font-weight:600;margin-right:6px}.flags{margin:6px 0 0;padding-left:18px;color:var(--warn);font-size:12.5px}
+.actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}.actions button{padding:3px 10px;font-size:12px}
+.edit{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;padding:10px;background:var(--bg);border-radius:8px}.edit .w{grid-column:1/-1}
+details{margin-top:7px;font-size:12.5px;color:var(--mute)}.hist{padding:5px 0;border-bottom:1px solid var(--line)}
+#tr{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto;padding:8px 0}
+.ln{display:flex;gap:8px;padding:3px 12px;font-size:12.5px;border-left:3px solid transparent}.ln i{color:var(--mute);font-style:normal;min-width:26px;text-align:right}
+.ln.verified{background:var(--okbg)}.ln.needs_review{background:var(--warnbg)}.ln.hit{outline:2px solid var(--acc);border-left-color:var(--acc)}
+.ln em{font-style:normal;font-weight:600}.err{color:var(--bad);margin-top:8px}.note{background:var(--warnbg);color:var(--warn);padding:8px 12px;border-radius:8px;margin-bottom:10px}
+</style></head><body>
+<header><h1>AMIA <small>Autonomous Meeting Intelligence Agent - evidence before intelligence</small></h1><span class="pill" id="pill">checking...</span></header>
+<main><section>
+ <div class="panel">
+  <div class="row"><div><label>Meeting title</label><input id="title" placeholder="Weekly sync"></div>
+   <div><label>Meeting date</label><input id="date" type="date"></div>
+   <div><label>Engine</label><select id="engine"><option value="auto">Auto (local LLM if available)</option><option value="rules">Rules only (offline)</option><option value="ollama">Local LLM (Ollama)</option></select></div>
+   <div><label>Local model (Ollama)</label><select id="model"><option value="">loading...</option></select></div>
+   <div><label>Your name (for audit)</label><input id="reviewer" placeholder="reviewer"></div></div>
+  <label>Transcript (e.g. "[00:10] Ravi: I'll finish the API by 18 November.")</label>
+  <textarea id="text" placeholder="Paste a transcript here, or load the sample..."></textarea>
+  <div class="bar"><button class="primary" id="go">Analyze</button><button id="sample">Load sample</button>
+   <button id="upl">Upload .txt</button><input id="file" type="file" accept=".txt,.vtt,.srt,.md" hidden>
+   <span id="msg" class="meta"></span></div><div id="err" class="err"></div>
+ </div>
+ <div id="out"></div></section>
+ <aside class="panel" id="tr"><div class="meta" style="padding:0 12px">Transcript appears here. Click any evidence to jump to its line.</div></aside></main>
+<script>
+const $=s=>document.querySelector(s);let run=null,filter="all";
+const LABEL={action:"Action",decision:"Decision",question:"Open question",risk:"Risk",milestone:"Milestone",context:"Context"};
+function h(t,a={},...k){const e=document.createElement(t);for(const[n,v]of Object.entries(a)){if(n==="class")e.className=v;else if(n.startsWith("on"))e.addEventListener(n.slice(2),v);else if(v!=null&&v!==false)e.setAttribute(n,v===true?"":v)}for(const c of k.flat()){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(String(c)))}return e}
+async function api(p,o){const r=await fetch(p,o);let d;try{d=await r.json()}catch{d={}}if(!r.ok)throw new Error(d.error||r.statusText);return d}
+const post=(p,b)=>api(p,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
+function setErr(m){$("#err").textContent=m||""}
+function syncModel(){$("#model").disabled=$("#engine").value==="rules"}
+$("#engine").onchange=syncModel;
+(async()=>{try{const x=await api("/api/health"),p=$("#pill"),m=$("#model");m.replaceChildren();
+ if(x.models.length){x.models.forEach(n=>m.append(h("option",{value:n},n)));m.value=x.models.includes(x.model)?x.model:x.models[0];
+  p.textContent=`Ollama connected - ${x.models.length} model(s)`;p.className="pill on"}
+ else{m.append(h("option",{value:""},x.ollama_running?"no models pulled":"Ollama not running"));p.textContent="Rule engine only ("+(x.ollama_running?"no models pulled":"Ollama not running")+")"}
+ syncModel()}catch(err){$("#pill").textContent=err instanceof TypeError&&/fetch|network/i.test(err.message)?"server not reachable - is run.py still running?":"server is an older version - stop it (Ctrl+C) and run python run.py again"}})();
+$("#sample").onclick=async()=>{const s=await api("/api/sample");$("#text").value=s.transcript;$("#title").value=s.title;$("#date").value=s.meeting_date};
+$("#upl").onclick=()=>$("#file").click();
+$("#file").onchange=async e=>{const f=e.target.files[0];if(f){$("#text").value=await f.text();$("#title").value=$("#title").value||f.name.replace(/\.[^.]+$/,"")}};
+$("#go").onclick=async()=>{setErr();$("#go").disabled=true;$("#msg").textContent="Analyzing locally...";
+ try{run=await post("/api/analyze",{transcript:$("#text").value,title:$("#title").value,meeting_date:$("#date").value,engine:$("#engine").value,model:$("#model").value||undefined});filter="all";render()}catch(e){setErr(e.message)}
+ $("#go").disabled=false;$("#msg").textContent=""};
+function state(it){const c=it.current;if(c.review==="rejected")return["rejected","Rejected by human"];if(c.review==="confirmed")return["human","Confirmed by human"];if(c.review==="corrected")return["human","Corrected by human"];return it.status==="verified"?["verified","Verified"]:it.status==="unsupported"?["unsupported","Unsupported"]:["needs_review","Needs human review"]}
+function render(){if(!run)return;const s=run.stats,out=$("#out");out.replaceChildren();
+ if(run.warnings.length)out.append(...run.warnings.map(w=>h("div",{class:"note"},w)));
+ out.append(h("div",{class:"chips"},[["Items",s.total],["Verified",s.verified],["Needs review",s.needs_review],["Unsupported",s.unsupported]].map(([k,v])=>h("div",{class:"chip"},h("b",{},v),k)),
+  h("div",{class:"chip"},h("b",{},run.engine_used+(run.model?" / "+run.model:"")),"Engine"),
+  h("div",{class:"chip"},h("a",{href:`/api/runs/${run.id}/export?format=md`},"Export Markdown"),h("br"),h("a",{href:`/api/runs/${run.id}/export?format=json`},"Export JSON"))));
+ const tabs=["all",...Object.keys(LABEL),"review","unsupported"];
+ out.append(h("div",{class:"tabs"},tabs.map(t=>h("button",{class:filter===t?"on":"",onclick:()=>{filter=t;render()}},t==="all"?"All":t==="review"?"Needs review":t==="unsupported"?"Unsupported":LABEL[t]+"s"))));
+ const list=run.items.filter(i=>filter==="all"?i.status!=="unsupported":filter==="review"?i.status==="needs_review"&&!i.current.review:filter==="unsupported"?i.status==="unsupported":i.current.type===filter&&i.status!=="unsupported");
+ if(!list.length)out.append(h("div",{class:"meta"},"Nothing here."));list.forEach(i=>out.append(card(i)));
+ renderTr()}
+function card(it){const c=it.current,[k,label]=state(it),rej=c.review==="rejected";
+ const el=h("div",{class:`item ${it.status}${rej?" rejected":""}`},
+  h("div",{class:"top"},h("span",{class:"badge"},LABEL[c.type]),h("span",{class:`badge b-${k==="human"?"human":k}`},label),h("span",{class:"meta"},"#"+it.id)),
+  h("div",{class:"summary"},c.summary));
+ if(c.type==="action")el.append(h("div",{class:"meta"},"Owner: ",c.owner?h("b",{},c.owner):h("span",{class:"unset"},"unassigned"),"   Due: ",c.due?h("b",{},c.due):h("span",{class:"unset"},"not stated")));
+ if(c.type==="milestone")el.append(h("div",{class:"meta"},"Target date: ",c.due?h("b",{},c.due):h("span",{class:"unset"},"not stated")));
+ it.evidence.forEach(e=>el.append(h("button",{class:"ev",onclick:()=>hit(e.line)},h("span",{},`L${e.line}${e.role==="supporting"?" (supporting)":""}`),`[${e.speaker||"?"}] ${e.text}`)));
+ if(it.flags.length&&c.review!=="confirmed")el.append(h("ul",{class:"flags"},it.flags.map(f=>h("li",{},f))));
+ const acts=h("div",{class:"actions"});
+ if(it.status!=="unsupported"){acts.append(h("button",{onclick:()=>send(it,{action:"confirm"})},"Confirm"),h("button",{onclick:()=>edit(it,el)},"Edit"),h("button",{onclick:()=>send(it,{action:"reject"})},"Reject"))}
+ el.append(acts);
+ if(it.history.length)el.append(h("details",{},h("summary",{},`Audit trail (${it.history.length})`),
+  h("div",{class:"hist"},"Original (machine): "+JSON.stringify({type:it.type,summary:it.summary,owner:it.owner,due:it.due.iso||it.due.raw})),
+  it.history.map(x=>h("div",{class:"hist"},`${x.at} - ${x.reviewer} - ${x.action}${x.note?": "+x.note:""} `,h("br"),"before: "+JSON.stringify(x.before),h("br"),"after: "+JSON.stringify(x.after)))));
+ return el}
+function edit(it,el){if(el.querySelector(".edit"))return;const c=it.current;
+ const f={type:h("select",{},Object.entries(LABEL).map(([v,l])=>h("option",{value:v,selected:v===c.type},l))),owner:h("input",{value:c.owner||""}),due:h("input",{value:c.due||"",placeholder:"YYYY-MM-DD"}),summary:h("input",{value:c.summary}),note:h("input",{placeholder:"why are you changing this?"})};
+ const box=h("div",{class:"edit"},h("div",{},h("label",{},"Type"),f.type),h("div",{},h("label",{},"Owner"),f.owner),h("div",{},h("label",{},"Due (clear date)"),f.due),
+  h("div",{class:"w"},h("label",{},"Summary"),f.summary),h("div",{class:"w"},h("label",{},"Note"),f.note),
+  h("div",{class:"w actions"},h("button",{class:"primary",onclick:()=>send(it,{action:"edit",type:f.type.value,owner:f.owner.value,due:f.due.value,summary:f.summary.value,note:f.note.value})},"Save correction"),h("button",{onclick:()=>box.remove()},"Cancel")));
+ el.append(box)}
+async function send(it,b){setErr();try{run=await post(`/api/runs/${run.id}/items/${it.id}/correct`,{...b,reviewer:$("#reviewer").value||"anonymous"});render()}catch(e){alert(e.message)}}
+function renderTr(){const t=$("#tr");t.replaceChildren();const st={};run.items.forEach(i=>i.evidence.forEach(e=>{if(!st[e.line]||i.status==="needs_review")st[e.line]=i.status}));
+ run.lines.forEach(l=>t.append(h("div",{class:"ln "+(st[l.n]||""),id:"L"+l.n},h("i",{},l.n),h("div",{},l.speaker?h("em",{},l.speaker+": "):"",l.text))))}
+function hit(n){document.querySelectorAll(".ln.hit").forEach(x=>x.classList.remove("hit"));const e=$("#L"+n);if(e){e.classList.add("hit");e.scrollIntoView({block:"center",behavior:"smooth"})}}
+</script></body></html>

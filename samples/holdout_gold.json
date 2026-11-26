@@ -1,0 +1,152 @@
+{
+ "transcript": "holdout_planning_meeting.txt",
+ "meeting_date": "2026-11-17",
+ "expected": [
+  {
+   "type": "context",
+   "line": 2
+  },
+  {
+   "type": "context",
+   "line": 3
+  },
+  {
+   "type": "action",
+   "line": 4,
+   "owner": "Karthik",
+   "due": "2026-12-04",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 6,
+   "owner": "Rahul",
+   "due": "2026-11-18",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 9,
+   "owner": "Kiran",
+   "due": "2026-11-20",
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 10,
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 11,
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 12,
+   "status": "verified"
+  },
+  {
+   "type": "risk",
+   "line": 14
+  },
+  {
+   "type": "risk",
+   "line": 15
+  },
+  {
+   "type": "question",
+   "line": 16,
+   "status": "verified"
+  },
+  {
+   "type": "milestone",
+   "line": 18,
+   "due": "2026-12-08",
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 19,
+   "status": "needs_review"
+  },
+  {
+   "type": "milestone",
+   "line": 19,
+   "due": "2026-12-05",
+   "status": "needs_review"
+  },
+  {
+   "type": "milestone",
+   "line": 20,
+   "due": "2026-12-12",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 21,
+   "owner": "Priya",
+   "due": null,
+   "status": "needs_review"
+  },
+  {
+   "type": "action",
+   "line": 23,
+   "owner": "Rahul",
+   "due": null,
+   "status": "needs_review"
+  },
+  {
+   "type": "context",
+   "line": 24
+  },
+  {
+   "type": "action",
+   "line": 25,
+   "owner": null,
+   "due": null,
+   "status": "needs_review"
+  },
+  {
+   "type": "action",
+   "line": 26,
+   "owner": "Karthik",
+   "due": "2026-11-23",
+   "status": "needs_review"
+  },
+  {
+   "type": "question",
+   "line": 27,
+   "status": "verified"
+  },
+  {
+   "type": "risk",
+   "line": 28
+  }
+ ],
+ "must_not_extract": [
+  {
+   "line": 1
+  },
+  {
+   "type": "milestone",
+   "line": 3
+  },
+  {
+   "type": "decision",
+   "line": 24
+  },
+  {
+   "line": 29
+  },
+  {
+   "line": 30
+  },
+  {
+   "line": 31
+  },
+  {
+   "line": 5
+  }
+ ]
+}

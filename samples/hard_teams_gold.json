@@ -1,0 +1,96 @@
+{
+ "transcript": "hard_teams_meeting.txt",
+ "meeting_date": "2026-11-17",
+ "expected": [
+  {
+   "type": "milestone",
+   "line": 5,
+   "due": "2026-11-30",
+   "status": "needs_review"
+  },
+  {
+   "type": "context",
+   "line": 5
+  },
+  {
+   "type": "action",
+   "line": 8,
+   "owner": "Sam and Lena",
+   "due": "2026-11-24",
+   "status": "verified"
+  },
+  {
+   "type": "risk",
+   "line": 11
+  },
+  {
+   "type": "risk",
+   "line": 14
+  },
+  {
+   "type": "question",
+   "line": 17,
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 23,
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 26,
+   "status": "verified"
+  },
+  {
+   "type": "milestone",
+   "line": 29,
+   "due": "2026-11-20",
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 32,
+   "status": "verified"
+  },
+  {
+   "type": "milestone",
+   "line": 32,
+   "due": "2026-12-02",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 35,
+   "owner": "Lena",
+   "due": "2026-11-19",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 41,
+   "owner": "Sam Wilson",
+   "due": null,
+   "status": "needs_review"
+  },
+  {
+   "type": "question",
+   "line": 44,
+   "status": "verified"
+  }
+ ],
+ "must_not_extract": [
+  {
+   "line": 50
+  },
+  {
+   "line": 2
+  },
+  {
+   "line": 38
+  },
+  {
+   "line": 53
+  }
+ ]
+}

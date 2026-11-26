@@ -1,0 +1,25 @@
+Meena: ok so um let's go through the launch readiness for the mobile app
+Meena: first the status the android build is done and the ios build is about eighty percent done
+Arjun: um I'll finish the ios build by friday
+Meena: who is going to own the app store submission
+Arjun: I can take that
+Meena: great Divya can you update the release notes by thursday
+Divya: yes will do
+Karan: I am worried that the payment sdk upgrade might break the checkout flow
+Karan: we are also waiting on legal for the privacy policy text
+Meena: what is the deadline for the privacy policy
+Karan: honestly no idea
+Meena: ok the go live is planned for the 3rd of december
+Arjun: and the beta testers will get the build on monday
+Meena: we decided to push the launch from the 1st of december to the 3rd
+Divya: maybe we could add a dark mode at some point
+Meena: actually scratch that the release notes are due friday not thursday
+Arjun: I'm going to run the regression suite tomorrow
+Karan: Meena please send the vendor invoice to finance by the 25th
+Meena: sure
+Meena: so to recap the decision is we ship on the 3rd contingent on the sdk fix
+Arjun: do we have a rollback plan
+Karan: yes we do it is in the runbook
+Divya: I will, um, update the runbook after the sdk upgrade
+Meena: we are not going to support android twelve anymore
+Meena: thanks all

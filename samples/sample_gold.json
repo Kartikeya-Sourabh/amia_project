@@ -1,0 +1,96 @@
+{
+ "meeting_date": "2026-11-17",
+ "expected": [
+  {
+   "type": "context",
+   "line": 2
+  },
+  {
+   "type": "action",
+   "line": 4,
+   "owner": "Ravi",
+   "due": "2026-11-18",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 5,
+   "owner": "Priya",
+   "due": null,
+   "status": "needs_review"
+  },
+  {
+   "type": "risk",
+   "line": 7
+  },
+  {
+   "type": "decision",
+   "line": 8,
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 10,
+   "status": "verified"
+  },
+  {
+   "type": "question",
+   "line": 11
+  },
+  {
+   "type": "action",
+   "line": 16,
+   "owner": null,
+   "status": "needs_review"
+  },
+  {
+   "type": "action",
+   "line": 17,
+   "owner": "Priya",
+   "due": "2026-11-20",
+   "status": "verified"
+  },
+  {
+   "type": "milestone",
+   "line": 18,
+   "due": "2026-11-25"
+  },
+  {
+   "type": "risk",
+   "line": 19
+  },
+  {
+   "type": "action",
+   "line": 20,
+   "owner": "Sam",
+   "due": null,
+   "status": "needs_review"
+  },
+  {
+   "type": "question",
+   "line": 21
+  },
+  {
+   "type": "context",
+   "line": 3
+  },
+  {
+   "type": "milestone",
+   "line": 8,
+   "due": "2026-12-02",
+   "status": "verified"
+  }
+ ],
+ "must_not_extract": [
+  {
+   "line": 13
+  },
+  {
+   "line": 15
+  },
+  {
+   "line": 22
+  }
+ ],
+ "transcript": "sample_meeting.txt"
+}

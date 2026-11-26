@@ -1,0 +1,68 @@
+{
+ "transcript": "hard_vtt_meeting.vtt",
+ "meeting_date": "2026-11-17",
+ "expected": [
+  {
+   "type": "context",
+   "line": 9
+  },
+  {
+   "type": "risk",
+   "line": 13
+  },
+  {
+   "type": "action",
+   "line": 17,
+   "owner": "Nisha",
+   "due": "2026-11-17",
+   "status": "verified"
+  },
+  {
+   "type": "milestone",
+   "line": 33,
+   "due": "2026-12-15",
+   "status": "verified"
+  },
+  {
+   "type": "action",
+   "line": 41,
+   "owner": "Omar",
+   "due": "2026-11-25",
+   "status": "verified"
+  },
+  {
+   "type": "decision",
+   "line": 45,
+   "status": "verified"
+  },
+  {
+   "type": "risk",
+   "line": 49
+  },
+  {
+   "type": "question",
+   "line": 53,
+   "status": "verified"
+  },
+  {
+   "type": "question",
+   "line": 57,
+   "status": "needs_review"
+  }
+ ],
+ "must_not_extract": [
+  {
+   "type": "milestone",
+   "line": 9
+  },
+  {
+   "line": 37
+  },
+  {
+   "line": 29
+  },
+  {
+   "line": 61
+  }
+ ]
+}
